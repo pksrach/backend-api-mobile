@@ -3,11 +3,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from app.routes.product_router import product_router
+from app.routes.category_router import category_router
 
 
 def create_application():
     application = FastAPI()
     application.include_router(product_router)
+    application.include_router(category_router)
 
     return application
 

@@ -13,7 +13,6 @@ def custom_openapi(app: FastAPI):
     )
     openapi_schema["tags"] = [
         {"name": "Category API", "description": "Endpoints for managing categories in the backend."},
-        {"name": "Backend Brand API", "description": "Endpoints for managing brands in the backend."},
 
         # Default tag
         {"name": "Default", "description": "Default operations provided by the system."},
