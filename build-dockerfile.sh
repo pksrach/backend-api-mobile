@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONTAINER=efurniture-backend
+CONTAINER=backend-api-mobile
 TAG=latest
 IMAGE="pksrach/$CONTAINER:$TAG"
 

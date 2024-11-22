@@ -7,7 +7,7 @@ POSTGRES_USER="your_usename"
 POSTGRES_PASSWORD="your_password"
 POSTGRES_DATABASE="efurniture"
 
-CONTAINER=efurniture-backend
+CONTAINER=backend-api-mobile
 TAG=latest
 IMAGE="pksrach/$CONTAINER:$TAG"
 
