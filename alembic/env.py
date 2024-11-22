@@ -9,8 +9,8 @@ from app.config.settings import get_settings
 from app.config.database import Base
 
 # Import All Models
-from app.model.category_model import *
-from app.model.product_model import *
+from app.models.category_model import *
+from app.models.product_model import *
 import sqlalchemy.ext.asyncio
 
 settings = get_settings()

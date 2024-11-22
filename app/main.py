@@ -2,9 +2,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
+from app.routes.product_router import product_router
+
 
 def create_application():
     application = FastAPI()
+    application.include_router(product_router)
 
     return application
 

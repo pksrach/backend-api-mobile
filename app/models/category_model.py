@@ -1,7 +1,8 @@
+import uuid
 from sqlalchemy import Column, String
+from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
-from app.model.base_model import BaseModel
-
+from app.models.base_model import BaseModel
 
 class CategoryModel(BaseModel):
     __tablename__ = "categories"
