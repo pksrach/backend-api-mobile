@@ -12,10 +12,23 @@ def custom_openapi(app: FastAPI):
         routes=app.routes,
     )
     openapi_schema["tags"] = [
-        {"name": "Category API", "description": "Endpoints for managing categories in the backend."},
-
+        {
+            "name": "Category API",
+            "description": "Endpoints for managing categories in the backend.",
+        },
+        {
+            "name": "Product API",
+            "description": "Endpoints for managing products in the backend.",
+        },
+        {
+            "name": "Media Storage API",
+            "description": "Endpoints for managing media Storages in the backend.",
+        },
         # Default tag
-        {"name": "Default", "description": "Default operations provided by the system."},
+        {
+            "name": "Default",
+            "description": "Default operations provided by the system.",
+        },
     ]
 
     openapi_schema["info"]["contact"] = {

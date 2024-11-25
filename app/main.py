@@ -1,15 +1,23 @@
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 from app.routes.product_router import product_router
 from app.routes.category_router import category_router
+from app.routes.media_storage_router import media_router
 
 
 def create_application():
     application = FastAPI()
+    if not os.path.exists("uploads"):
+        os.makedirs("uploads")
+    # Serve the 'uploads' directory as static files
+    application.mount("/uploads", StaticFiles(directory="uploads"), name="uploads")
+
     application.include_router(product_router)
     application.include_router(category_router)
+    application.include_router(media_router)
 
     return application
 

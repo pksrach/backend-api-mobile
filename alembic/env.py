@@ -11,6 +11,7 @@ from app.config.database import Base
 # Import All Models
 from app.models.category_model import *
 from app.models.product_model import *
+from app.models.media_storage_model import *
 import sqlalchemy.ext.asyncio
 
 settings = get_settings()
