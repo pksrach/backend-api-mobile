@@ -4,6 +4,7 @@ from sqlalchemy.orm import selectinload
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.category_model import CategoryModel
+from app.models.product_model import ProductModel
 from app.schemas.category_schema import CategoryRequest
 
 
@@ -17,9 +18,10 @@ class CategoryService:
         return list(result.scalars().all())
 
     async def get_category(self, id):
-        stmt = select(CategoryModel).where(CategoryModel.id == id)
+        stmt = select(ProductModel).where(ProductModel.category_id == id)
         result = await self.session.execute(stmt)
-        return result.scalar()
+        products = result.scalars().all()
+        return products
 
     async def create_category(self, req: CategoryRequest):
         stmt = select(CategoryModel).where(CategoryModel.name == req.name)
