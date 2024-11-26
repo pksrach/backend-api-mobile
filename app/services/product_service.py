@@ -53,6 +53,7 @@ class ProductService:
             name=req.name,
             description=req.description,
             price=req.price,
+            attachment=req.attachment,
             category_id=req.category_id,
         )
 
