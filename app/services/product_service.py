@@ -103,6 +103,8 @@ class ProductService:
         product.name = req.name
         product.description = req.description
         product.price = req.price
+        if req.attachment is not None:
+            product.attachment = req.attachment
         product.category_id = req.category_id
 
         await self.session.commit()
